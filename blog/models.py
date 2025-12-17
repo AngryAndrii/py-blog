@@ -21,7 +21,7 @@ class Post(models.Model):
     created_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.owner} / {self.created_time} - {self.content}"
+        return f"{self.owner} / {self.created_time}"
 
     class Meta:
         ordering = ("title", )
@@ -38,4 +38,7 @@ class Commentary(models.Model):
     content = models.TextField(blank=False, null=False)
 
     def __str__(self):
-        return f"{self.user} / {self.created_time} - {self.content}"
+        return f"{self.user} / {self.created_time}"
+
+    class Meta:
+        verbose_name_plural = "Commentaries"

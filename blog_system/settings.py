@@ -117,4 +117,4 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-AUTHOR_USER_MODEL = "blog.User"
+AUTH_USER_MODEL = "blog.User"
