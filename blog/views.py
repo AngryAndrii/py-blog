@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.views import generic
 
-from django.http import HttpResponse
-import datetime
+from blog.models import Post
 
 
-def index(request):
-    now = datetime.datetime.now()
-    html = '<html lang="en"><body>It is now %s.</body></html>' % now
-    return HttpResponse(html)
+class HomePageListView(generic.ListView):
+    model = Post
+    template_name = "main/post_list.html"
+    context_object_name = "posts"
+    ordering = "-created_time"
