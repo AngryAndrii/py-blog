@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+	<h2>{{ post.title }}</h2>
+	<h4>Commentaries:</h4>
+	<ul>
+		{% for comment in post.commentaries.all %}
+			<li><h5>{{ comment.user.username }}</h5>
+				<h6>{{ comment.created_time }}</h6>
+				<p>{{ comment.content }}</p></li>
+		{% endfor %}
+	</ul>
+
+	<form action="" method="post" novalidate>
+		{% csrf_token %}
+		{{ form|crispy }}
+
+		<input type="submit" value="Submit">
+	</form>
+
+{% endblock %}

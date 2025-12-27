@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h2>All posts</h2>
-  <ul>
-    {% for post in posts %}
-      <li><h3>{{ post.title }}</h3>
-        <p>{{ post.content }}</p>  <span>{{ post.created_time }} <h4>{{ post.commentaries.count }}</h4></span></li>
-    {% endfor %}
-  </ul>
+	<h2>All posts</h2>
+	<ul>
+		{% for post in post_list %}
+			<li><a href="{% url 'blog:post-detail' post.pk %}">
+				{{ post.title }}
+			</a>
+				<p>{{ post.content }}</p>  <span>{{ post.created_time }} <h4>{{ post.commentaries.count }}</h4></span>
+			</li>
+		{% endfor %}
+	</ul>
 
 {% endblock %}
