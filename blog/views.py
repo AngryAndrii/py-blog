@@ -2,7 +2,7 @@ from django import forms
 from django.shortcuts import redirect
 from django.views import generic
 
-from blog.models import Post, Commentary
+from blog.models import Post, Comment
 
 
 class HomePageListView(generic.ListView):
@@ -40,5 +40,5 @@ class PostDetailView(generic.DetailView):
 
 class CommentaryForm(forms.ModelForm):
     class Meta:
-        model = Commentary
-        fields = ("content",)
+        model = Comment
+        fields = ("text",)
