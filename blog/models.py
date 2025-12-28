@@ -41,4 +41,4 @@ class Comment(models.Model):
         return f"{self.author} / {self.created_date}"
 
     class Meta:
-        verbose_name_plural = "Commentaries"
+        verbose_name_plural = "Comments"

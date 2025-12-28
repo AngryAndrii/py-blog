@@ -8,7 +8,7 @@ admin.site.unregister(Group)
 
 
 @admin.register(Comment)
-class CommentaryAdmin(admin.ModelAdmin):
+class CommentAdmin(admin.ModelAdmin):
     list_filter = ["author", "post"]
     search_fields = ["author__username"]
 
