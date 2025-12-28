@@ -16,7 +16,7 @@ class CommentaryAdmin(admin.ModelAdmin):
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_filter = ["title"]
-    search_fields = ["owner__username"]
+    search_fields = ["author__username"]
 
 
 @admin.register(get_user_model())

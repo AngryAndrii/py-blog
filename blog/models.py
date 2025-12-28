@@ -9,7 +9,7 @@ class User(AbstractUser):
                 f" {self.last_name} {self.email}")
 
     class Meta:
-        ordering = ("username", )
+        ordering = ("username",)
 
 
 class Post(models.Model):
@@ -24,13 +24,13 @@ class Post(models.Model):
         return f"{self.author} / {self.created_time}"
 
     class Meta:
-        ordering = ("title", )
+        ordering = ("title",)
 
 
 class Comment(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL,
-                             related_name="commentaries",
-                             on_delete=models.CASCADE)
+                               related_name="commentaries",
+                               on_delete=models.CASCADE)
     post = models.ForeignKey(Post,
                              related_name="commentaries",
                              on_delete=models.CASCADE)
